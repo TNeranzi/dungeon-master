@@ -1,15 +1,10 @@
-import java.util.List;
-
 public interface Phone {
 
-    void addContact(Contact contact);
+    void addContact(String index, String telephone, String firstName, String lastName);
     void getContacts();
-    void getFirstContact();
-    void getLastContact();
-    void sendText(Message message);
+    void sendText(String phoneNumber, String message);
     void getMessageHistory();
-
-//    void call();
-//    void getCallHistory();
+    void call(String phone);
+    void viewCallHistory();
 
 }

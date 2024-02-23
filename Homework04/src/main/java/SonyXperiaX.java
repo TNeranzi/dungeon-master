@@ -1,32 +1,11 @@
-import java.util.List;
-
-public class SonyXperiaX extends Sony{
+public class SonyXperiaX extends Sony {
 
     protected static final int batteryLife = 40;
 
+    //Overridden method to take into account the specific batteryLife of the phone
     @Override
-    public void addContact(Contact contact){
-        super.addContact(contact);
-    }
-
-    @Override
-    public void getContacts() {
-        super.getContacts();
-    }
-
-    @Override
-    public void getFirstContact() {
-        super.getFirstContact();
-    }
-
-    @Override
-    public void getLastContact() {
-        super.getLastContact();
-    }
-
-    @Override
-    public void sendText(Message message) {
+    public void sendText(String phoneNumber, String message) {
         batteryLeft = batteryLife;
-        super.sendText(message);
+        super.sendText(phoneNumber, message);
     }
 }

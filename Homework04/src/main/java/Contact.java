@@ -1,12 +1,15 @@
-public class Contact extends Smartphone{
+public class Contact extends Smartphone {
 
-    protected int index;
-    protected int telephone;
+    protected String index;
+    protected String telephone;
     protected String firstName;
     protected String lastName;
 
+    public Contact(String telephone) {
+        this.telephone = telephone;
+    }
 
-    public Contact(int index, int telephone, String firstName, String lastName) {
+    public Contact(String index, String telephone, String firstName, String lastName) {
         this.index = index;
         this.telephone = telephone;
         this.firstName = firstName;
