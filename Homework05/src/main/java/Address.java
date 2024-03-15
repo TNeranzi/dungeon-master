@@ -1,14 +1,15 @@
-public class Address {
+public class Address extends Hobby{
 
     protected String street;
     protected int number;
-    protected String building;
+    protected String unit;
     protected String room;
 
-    public Address(String street, int number, String building, String room) {
+    public Address(String name, int frequency, String street, int number, String unit, String room) {
+        super(name, frequency);
         this.street = street;
         this.number = number;
-        this.building = building;
+        this.unit = unit;
         this.room = room;
     }
 }
