@@ -12,9 +12,12 @@ public class Unemployed extends Person{
     public String getCnp() {
         return cnp;
     }
+    public static String getType() {
+        return type;
+    }
 
     public void printUnemployed() {
         super.print();
-        System.out.println(", Employment Status: " + type + ", CNP: " + getCnp());
+        System.out.println(", Employment Status: " + getType() + ", CNP: " + getCnp());
     }
 }

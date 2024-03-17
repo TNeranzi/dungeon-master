@@ -1,10 +1,4 @@
-import com.sun.source.tree.ReturnTree;
-
-import java.lang.runtime.SwitchBootstraps;
-import java.util.Comparator;
-
-
-public abstract class Person extends User {
+public abstract class Person{
 
     protected String firstName;
     protected String lastName;
@@ -19,27 +13,15 @@ public abstract class Person extends User {
     public String getFirstName() {
         return firstName;
     }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 
+    //Printing information for users without a type
     public void print() {
         System.out.print("First Name: " + getFirstName() + ", " +
                             "Last Name: " + getLastName() + ", " +
@@ -47,14 +29,14 @@ public abstract class Person extends User {
                             );
     }
 
+    //Method that decides the message to be printed based on the person's "type"
     public void printByType(Person user) {
         switch (user) {
             case Student student -> student.printStudent();
             case Unemployed unemployed -> unemployed.printUnemployed();
             case Employee employee -> employee.printEmployee();
             case Retired retired -> retired.printRetired();
-            case null, default -> user.print();
+            default -> user.print();
         }
     }
-
 }

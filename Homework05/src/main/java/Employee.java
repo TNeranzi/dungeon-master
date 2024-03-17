@@ -12,9 +12,12 @@ public class Employee extends Person{
     public String getCompanyID(){
         return companyID;
     }
+    public String getType() {
+        return type;
+    }
 
     public void printEmployee() {
         super.print();
-        System.out.println(", Employment Status: " + type + ", Company ID: " + getCompanyID());
+        System.out.println(", Employment Status: " + getType() + ", Company ID: " + getCompanyID());
     }
 }
