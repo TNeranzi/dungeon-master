@@ -1,4 +1,4 @@
-public class Retired extends Person{
+public class Retired extends Person {
     protected String pensionSlip;
     protected static String type;
 
@@ -12,9 +12,12 @@ public class Retired extends Person{
     public String getPensionSlip() {
         return pensionSlip;
     }
+    public static String getType() {
+        return type;
+    }
 
     public void printRetired() {
         super.print();
-        System.out.println(", Employment Status: " + type + ", Pension Slip No: " + getPensionSlip());
+        System.out.println(", Employment Status: " + getType() + ", Pension Slip No: " + getPensionSlip());
     }
 }

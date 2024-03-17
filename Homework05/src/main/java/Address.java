@@ -1,4 +1,4 @@
-public class Address extends Hobby{
+public class Address extends Hobby {
 
     protected String street;
     protected int number;
@@ -11,5 +11,27 @@ public class Address extends Hobby{
         this.number = number;
         this.unit = unit;
         this.room = room;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+    public int getNumber() {
+        return number;
+    }
+    public String getUnit() {
+        return unit;
+    }
+    public String getRoom() {
+        return room;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()
+                + "Street: " + getStreet() + ", " +
+                "Street Number: " + getNumber() + ", " +
+                "Building Unit: " + getUnit() + ", " +
+                "Room Number: " + getRoom() + "\n ";
     }
 }

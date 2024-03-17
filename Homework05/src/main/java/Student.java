@@ -1,4 +1,4 @@
-public class Student extends Person{
+public class Student extends Person {
 
     protected String studentID;
     protected static String type;
@@ -8,16 +8,16 @@ public class Student extends Person{
         this.studentID = studentID;
         type = "Student";
     }
+
     public String getStudentID() {
         return studentID;
     }
-
     public static String getType() {
         return type;
     }
 
     public void printStudent() {
         super.print();
-        System.out.println(", Employment Status: " + type + ", Student ID: " + getStudentID());
+        System.out.println(", Employment Status: " + getType() + ", Student ID: " + getStudentID());
     }
 }
