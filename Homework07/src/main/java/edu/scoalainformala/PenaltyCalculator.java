@@ -19,7 +19,7 @@ public class PenaltyCalculator extends TimeConvertor {
         String shotsStatus = shotsPerRound.getFirstShootingRound() +
                 shotsPerRound.getSecondShootingRound() +
                 shotsPerRound.getThirdShootingRound();
-        shotsPerPerson = Arrays.asList(shotsStatus);
+        shotsPerPerson = List.of(shotsStatus);
 
         penalty = 0;
         shotFired = null;
