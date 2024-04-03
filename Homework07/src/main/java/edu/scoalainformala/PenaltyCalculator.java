@@ -7,13 +7,7 @@ public class PenaltyCalculator extends TimeConvertor {
 
     int timePenaltyInSeconds;
     int penalty;
-    Athlete shotsPerRound;
     Character shotFired;
-
-    public PenaltyCalculator(int timePenaltyInSeconds) {
-
-        this.timePenaltyInSeconds = timePenaltyInSeconds;
-    }
 
     public PenaltyCalculator() {
     }
@@ -29,7 +23,7 @@ public class PenaltyCalculator extends TimeConvertor {
         shotsPerPerson = Arrays.asList(shotsStatus);
 
         penalty = 0;
-        Character shotFired = null;
+        shotFired = null;
 
         for (String perPerson : shotsPerPerson) {
             for (int i = 0; i < perPerson.length(); i++) {
