@@ -21,9 +21,9 @@ public class Main {
         Ranking ranking = new Ranking();
         List<Integer> athleteTimes = new ArrayList<>();
 
-        for (int i = 0; i < athletes.size(); i++) {
-            convertedTimes.add(timeConverter.skiingTimeConversionToSeconds(athletes.get(i)));
-            penaltyTimes.add(penalty.timePenaltyInSeconds(athletes.get(i)));
+        for (Athlete value : athletes) {
+            convertedTimes.add(timeConverter.skiingTimeConversionToSeconds(value));
+            penaltyTimes.add(penalty.timePenaltyInSeconds(value));
             athleteTimes.add(timeConverter.totalTimeInSeconds(timeConverter.skiingTimeInSeconds, penalty.penalty));
             timeConverter.reverseConvertor();
 
@@ -31,9 +31,9 @@ public class Main {
 
         athleteTimes.sort(new Ranking());
         for (Integer athleteTime : athleteTimes) {
-            for (int i = 0; i < convertedTimes.size(); i++) {
-                for (int j = 0; j < penaltyTimes.size(); j++) {
-                    ranking.displayRanking(athleteTime, convertedTimes.get(i), penaltyTimes.get(j));
+            for (Integer convertedTime : convertedTimes) {
+                for (Integer penaltyTime : penaltyTimes) {
+                    ranking.displayRanking(athleteTime, convertedTime, penaltyTime);
                 }
             }
         }
