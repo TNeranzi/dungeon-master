@@ -5,7 +5,6 @@ import java.util.List;
 
 public class PenaltyCalculator extends TimeConvertor {
 
-    int timePenaltyInSeconds;
     int penalty;
     Character shotFired;
 
