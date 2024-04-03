@@ -1,6 +1,5 @@
 package edu.scoalainformala;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class PenaltyCalculator extends TimeConvertor {
