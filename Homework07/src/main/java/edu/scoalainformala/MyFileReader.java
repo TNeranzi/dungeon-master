@@ -7,8 +7,6 @@ import java.util.List;
 
 public class MyFileReader {
 
-    Athlete athlete;
-
     public void readFromCSV(String fileName, List<Athlete> athlete) throws IOException {
         BufferedReader fromCSV = new BufferedReader(new FileReader(fileName));
 

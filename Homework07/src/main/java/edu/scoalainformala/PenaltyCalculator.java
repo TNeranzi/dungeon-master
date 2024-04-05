@@ -2,7 +2,7 @@ package edu.scoalainformala;
 
 import java.util.List;
 
-public class PenaltyCalculator extends TimeConvertor {
+public class PenaltyCalculator {
 
     int penalty;
     Character shotFired;
@@ -23,9 +23,9 @@ public class PenaltyCalculator extends TimeConvertor {
         penalty = 0;
         shotFired = null;
 
-        for (String perPerson : shotsPerPerson) {
-            for (int i = 0; i < perPerson.length(); i++) {
-                shotFired = perPerson.charAt(i);
+        for (String shotPerPerson : shotsPerPerson) {
+            for (int i = 0; i < shotPerPerson.length(); i++) {
+                shotFired = shotPerPerson.charAt(i);
 
                 if (shotFired.equals('o')) {
                     penalty += 10;
