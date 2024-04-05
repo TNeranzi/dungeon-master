@@ -1,41 +1,34 @@
 package edu.scoalainformala;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-
-
         List<Athlete> athletes = new ArrayList<>();
         MyFileReader csv = new MyFileReader();
         csv.readFromCSV("biathlon_athletes.csv", athletes);
 
-        Athlete athlete = new Athlete();
         TimeConvertor timeConverter = new TimeConvertor();
-        List<Integer> convertedTimes = new ArrayList<>();
         PenaltyCalculator penalty = new PenaltyCalculator();
-        List<Integer> penaltyTimes = new ArrayList<>();
-        Ranking ranking = new Ranking();
-        List<Integer> athleteTimes = new ArrayList<>();
 
-        for (Athlete value : athletes) {
-            convertedTimes.add(timeConverter.skiingTimeConversionToSeconds(value));
-            penaltyTimes.add(penalty.timePenaltyInSeconds(value));
-            athleteTimes.add(timeConverter.totalTimeInSeconds(timeConverter.skiingTimeInSeconds, penalty.penalty));
-            timeConverter.reverseConvertor();
+        List<CompetitionResults> competitionResults = new ArrayList<>();
 
+        for (Athlete athlete : athletes) {
+            int skiingTimeInSeconds = timeConverter.skiingTimeConversionToSeconds(athlete);
+
+            int penaltyTime = penalty.timePenaltyInSeconds(athlete);
+
+            int totalTime = timeConverter.totalTimeInSeconds(timeConverter.skiingTimeInSeconds, penalty.penalty);
+
+            competitionResults.add(new CompetitionResults(athlete, skiingTimeInSeconds, penaltyTime, totalTime));
         }
 
-        athleteTimes.sort(new Ranking());
-        for (Integer athleteTime : athleteTimes) {
-            for (Integer convertedTime : convertedTimes) {
-                for (Integer penaltyTime : penaltyTimes) {
-                    ranking.displayRanking(athleteTime, convertedTime, penaltyTime);
-                }
-            }
+        competitionResults.sort(new Ranking());
+
+        for (CompetitionResults results : competitionResults) {
+            System.out.println(results.printResults(competitionResults.indexOf(results)));
         }
     }
 }

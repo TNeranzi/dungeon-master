@@ -1,24 +1,19 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package edu.scoalainformala;
 
 import java.util.Comparator;
 
-public class Ranking extends PenaltyCalculator implements Comparator<Integer> {
-
-    @Override
-    public int compare(Integer firstTime, Integer secondTime) {
-
-        int timeRank = firstTime - secondTime;
-        int compareTime = firstTime.compareTo(secondTime);
-
-        return (compareTime != 0) ? timeRank : compareTime;
+public class Ranking implements Comparator<CompetitionResults> {
+    public Ranking() {
     }
 
-    public void displayRanking(Integer seconds, int skiingTimeInSeconds, int penaltyInSeconds) {
-
-        int matchTimes = Integer.compare(seconds, totalTimeInSeconds(skiingTimeInSeconds, penaltyInSeconds));
-
-        if (matchTimes == 0)
-            System.out.println(reverseConvertor());
-
+    public int compare(CompetitionResults firstTime, CompetitionResults secondTime) {
+        int timeRank = firstTime.getAthleteTotalTime() - secondTime.getAthleteTotalTime();
+        int compareTime = firstTime.getAthleteTotalTime().compareTo(secondTime.getAthleteTotalTime());
+        return compareTime != 0 ? timeRank : compareTime;
     }
 }
